@@ -40,7 +40,7 @@
     }
   </script>
 
-  <!-- Hide Scrollbar for the Slider -->
+  <!-- Hide Scrollbar for Sliders -->
   <style>
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -60,16 +60,17 @@
 
   <!-- Navigation -->
   <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-pink-50">
-    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+    <!-- Desktop Layout Container -->
+    <div class="max-w-7xl mx-auto px-6 py-2 hidden md:flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center">
         <a href="#" class="flex items-center">
-          <img src="assets/CharmCore-logo.png" alt="CharmCore Co. Logo" class="h-24 md:h-40 w-auto">
+          <img src="assets/CharmCore-logo.png" alt="CharmCore Co. Logo" class="h-32 md:h-40 w-auto">
         </a>
       </div>
 
       <!-- Center: Nav links (Desktop) -->
-      <nav class="hidden lg:flex items-center space-x-6 font-heading font-semibold text-slate-600 text-base">
+      <nav class="flex items-center space-x-6 font-heading font-semibold text-slate-600 text-base">
         <a href="#offerings" class="hover:text-charm transition whitespace-nowrap">Craft Bars</a>
         <a href="#gallery" class="hover:text-charm transition whitespace-nowrap">Gallery</a>
         <a href="#locations" class="hover:text-charm transition whitespace-nowrap">Service Area</a>
@@ -79,7 +80,7 @@
       </nav>
 
       <!-- Right side: Book Button & Social Icons (Desktop) -->
-      <div class="hidden md:flex items-center space-x-4">
+      <div class="flex items-center space-x-4">
         <a href="#book" class="bg-charm hover:bg-charm-light text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition shadow-pink-glow whitespace-nowrap">
           Book Your Party
         </a>
@@ -100,10 +101,18 @@
           </a>
         </div>
       </div>
+    </div>
 
-      <!-- Mobile Hamburger Button -->
-      <div class="flex md:hidden items-center">
-        <button id="menu-btn" aria-label="Toggle Menu" class="text-slate-700 hover:text-charm focus:outline-none p-2">
+    <!-- Mobile Header Layout (Centered larger logo, tight padding, hamburger menu on right) -->
+    <div class="px-4 py-1 flex md:hidden items-center justify-between relative">
+      <div class="w-10"></div>
+      <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+        <a href="#" class="flex items-center">
+          <img src="assets/CharmCore-logo.png" alt="CharmCore Co. Logo" class="h-24 w-auto object-contain">
+        </a>
+      </div>
+      <div class="flex items-center z-10">
+        <button id="menu-btn" aria-label="Toggle Menu" class="text-slate-700 hover:text-charm focus:outline-none p-1">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -125,13 +134,11 @@
           Book Your Party
         </a>
         <div class="flex justify-center space-x-6 pt-2">
-          <!-- Instagram -->
           <a href="https://instagram.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-charm transition duration-300">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </a>
-          <!-- Facebook -->
           <a href="https://facebook.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-slate-400 hover:text-charm transition duration-300">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -186,16 +193,63 @@
   <!-- Party Offerings Section -->
   <section id="offerings" class="py-20 bg-charm-cream overflow-hidden">
     <div class="max-w-6xl mx-auto px-6 mb-8">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">Craft Bar Experiences</h2>
-        <p class="text-slate-500 font-light text-lg">Swipe to explore. Click on any service for full details.</p>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-center md:text-left">
+          <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-2">Craft Bar Experiences</h2>
+          <p class="text-slate-500 font-light text-lg">Swipe or use arrows to explore. Click any service for full details.</p>
+        </div>
+        <!-- Scroll Control Buttons -->
+        <div class="flex items-center space-x-3">
+          <button onclick="document.getElementById('services-slider').scrollBy({left: -340, behavior: 'smooth'})" aria-label="Scroll left" class="w-12 h-12 rounded-full bg-white border border-pink-100 flex items-center justify-center text-slate-600 hover:bg-charm hover:text-white transition shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="document.getElementById('services-slider').scrollBy({left: 340, behavior: 'smooth'})" aria-label="Scroll right" class="w-12 h-12 rounded-full bg-white border border-pink-100 flex items-center justify-center text-slate-600 hover:bg-charm hover:text-white transition shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Swipeable Container -->
-    <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pt-4 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+    <div id="services-slider" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pt-4 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
       
-      <!-- Card 1: Bag Chain Bar -->
+      <!-- Card 1: Lipgloss Keychain Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Popular Party Choice</span>
+        <img src="assets/charmcore-lipgloss-keychain-bar.jpg" alt="Lipgloss Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Lipgloss Keychain Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design a custom lip gloss keychain with adorable trendy charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $45/pp</p>
+          <button onclick="document.getElementById('modal-8').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Shoe & Sock Charm Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Popular Party Choice</span>
+        <img src="assets/charmcore-shoe-charm-bar.jpg" alt="Shoe & Sock Charm Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Shoe & Sock Charm Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Customize sneakers or ruffled socks with trendy bows and charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $40/pp</p>
+          <button onclick="document.getElementById('modal-11').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 3: Keychain Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Popular Party Choice</span>
+        <img src="assets/charmcore-keychain-bar.jpg" alt="Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Keychain Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Create colorful, one-of-a-kind keychains using assorted charms and beads.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $60/pp</p>
+          <button onclick="document.getElementById('modal-2').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 4: Bag Chain Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-bag-chain-bar.jpg" alt="Bag Chain Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -206,19 +260,7 @@
         </div>
       </div>
 
-      <!-- Card 2: Keychain Bar (TRENDING) -->
-      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
-        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Trending</span>
-        <img src="assets/charmcore-keychain-bar.jpg" alt="Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Keychain Bar</h3>
-          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Create colorful, one-of-a-kind keychains using assorted charms and beads.</p>
-          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $60/pp</p>
-          <button onclick="document.getElementById('modal-2').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Card 3: Charm & Bead Bar -->
+      <!-- Card 5: Charm & Bead Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-charm-bead-bar.jpg" alt="Charm & Bead Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -229,7 +271,7 @@
         </div>
       </div>
 
-      <!-- Card 4: Classic Charm Bar -->
+      <!-- Card 6: Classic Charm Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-classic-charm-bar.jpg" alt="Classic Charm Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -240,7 +282,7 @@
         </div>
       </div>
 
-      <!-- Card 5: Creamy Creation Decoden Bar -->
+      <!-- Card 7: Creamy Creation Decoden Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-creamy-creation-decoden.jpg" alt="Creamy Creation Decoden Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -251,7 +293,7 @@
         </div>
       </div>
 
-      <!-- Card 6: Decoden Jewelry Box Bar -->
+      <!-- Card 8: Decoden Jewelry Box Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-decoden-jewelry-box.jpg" alt="Decoden Jewelry Box Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -262,7 +304,7 @@
         </div>
       </div>
 
-      <!-- Card 7: Glam Brush Bar -->
+      <!-- Card 9: Glam Brush Bar -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-glam-brush-bar.jpg" alt="Glam Brush Bar" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -273,19 +315,7 @@
         </div>
       </div>
 
-      <!-- Card 8: Lipgloss Keychain Bar (TRENDING) -->
-      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
-        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Trending</span>
-        <img src="assets/charmcore-lipgloss-keychain-bar.jpg" alt="Lipgloss Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Lipgloss Keychain Bar</h3>
-          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design a custom lip gloss keychain with adorable trendy charms.</p>
-          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $45/pp</p>
-          <button onclick="document.getElementById('modal-8').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Card 9: Makeup Bag with Keychain -->
+      <!-- Card 10: Makeup Bag with Keychain -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-makeup-bag-keychain-bar.jpg" alt="Makeup Bag with Keychain" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -296,7 +326,7 @@
         </div>
       </div>
 
-      <!-- Card 10: Phone Wristlet -->
+      <!-- Card 11: Phone Wristlet -->
       <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
         <img src="assets/charmcore-phone-wristlet-bar.jpg" alt="Phone Wristlet" class="w-full h-48 object-cover bg-slate-100">
         <div class="p-6 flex flex-col flex-grow">
@@ -304,17 +334,6 @@
           <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design a custom beaded phone wristlet using colorful trendy charms.</p>
           <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $30/pp</p>
           <button onclick="document.getElementById('modal-10').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Card 11: Shoe & Sock Charm Bar -->
-      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
-        <img src="assets/charmcore-shoe-charm-bar.jpg" alt="Shoe & Sock Charm Bar" class="w-full h-48 object-cover bg-slate-100">
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Shoe & Sock Charm Bar</h3>
-          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Customize sneakers or ruffled socks with trendy bows and charms.</p>
-          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $40/pp</p>
-          <button onclick="document.getElementById('modal-11').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
         </div>
       </div>
 
@@ -503,66 +522,183 @@
     </dialog>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-20 bg-white border-y border-pink-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">The Aesthetic</h2>
-        <p class="text-slate-500 font-light text-lg">A look at recent party setups and finished creations.</p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-1.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+  <!-- Gallery Section (Swipeable & Clickable to Modal) -->
+  <section id="gallery" class="py-20 bg-white border-y border-pink-50 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 mb-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-center md:text-left">
+          <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-2">The Aesthetic</h2>
+          <p class="text-slate-500 font-light text-lg">Swipe through party setups and click any photo to enlarge.</p>
         </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-2.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-28.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-8.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-9.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-10.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-11.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-12.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-15.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-16.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-27.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-20.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-21.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-22.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-24.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        </div>
-        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
-          <img src="assets/Charmcore-gallery-26.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        <!-- Gallery Scroll Control Buttons -->
+        <div class="flex items-center space-x-3">
+          <button onclick="document.getElementById('gallery-slider').scrollBy({left: -320, behavior: 'smooth'})" aria-label="Scroll gallery left" class="w-12 h-12 rounded-full bg-charm-cream border border-pink-100 flex items-center justify-center text-slate-600 hover:bg-charm hover:text-white transition shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="document.getElementById('gallery-slider').scrollBy({left: 320, behavior: 'smooth'})" aria-label="Scroll gallery right" class="w-12 h-12 rounded-full bg-charm-cream border border-pink-100 flex items-center justify-center text-slate-600 hover:bg-charm hover:text-white transition shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Swipeable Gallery Container -->
+    <div id="gallery-slider" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pt-4 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+      
+      <!-- Gallery Item Template function generator via embedded images -->
+      <!-- Item 1 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-1.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-1.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-2.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-2.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-28.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-28.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-8.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-8.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-9.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-9.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-10.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-10.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-11.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-11.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-12.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-12.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-15.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-15.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-16.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-16.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-27.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-27.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-20.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-20.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 13 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-21.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-21.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 14 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-22.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-22.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 15 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-24.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-24.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Item 16 -->
+      <div onclick="openGalleryModal('assets/Charmcore-gallery-26.jpg')" class="w-[75vw] sm:w-[300px] md:w-[320px] aspect-[3/4] shrink-0 snap-center bg-charm-blush rounded-3xl overflow-hidden shadow-sm cursor-pointer group relative border border-pink-100">
+        <img src="assets/Charmcore-gallery-26.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <span class="bg-white/90 text-slate-800 font-heading font-bold text-sm px-4 py-2 rounded-full shadow-md">Click to Enlarge</span>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+  <!-- Gallery Lightbox Modal -->
+  <dialog id="gallery-modal" class="p-0 rounded-3xl shadow-2xl w-11/12 max-w-4xl m-auto border border-pink-100 bg-white/95 backdrop-blur-md">
+    <div class="p-4 md:p-6 relative">
+      <div class="flex justify-end mb-2">
+        <form method="dialog">
+          <button aria-label="Close modal" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-charm hover:text-white transition flex items-center justify-center text-slate-700 font-bold text-xl">&times;</button>
+        </form>
+      </div>
+      <div class="flex justify-center items-center pb-6 px-2">
+        <img id="modal-image-element" src="" alt="Enlarged Gallery View" class="max-h-[75vh] w-auto object-contain rounded-2xl shadow-sm">
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    function openGalleryModal(imageSrc) {
+      const modal = document.getElementById('gallery-modal');
+      const modalImg = document.getElementById('modal-image-element');
+      modalImg.src = imageSrc;
+      modal.showModal();
+    }
+  </script>
 
   <!-- Locations & Travel Fees Section -->
   <section id="locations" class="py-20 bg-charm-cream">

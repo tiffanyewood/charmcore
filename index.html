@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CharmCore Co. | This party will be a core memory</title>
+  
+  <!-- Google Fonts: League Spartan & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Color & Font Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charm: {
+              light: '#f19de9',   // Light Pink
+              DEFAULT: '#ff91d1', // Medium Pink
+              peach: '#ffae9c',   // Peach/Orange-Pink
+              blush: '#fff5f8',   // Ultra-light pink backdrop
+              cream: '#fffcfb',   // Warm bridal/event cream
+            }
+          },
+          fontFamily: {
+            heading: ['"League Spartan"', 'sans-serif'],
+            elegant: ['"Playfair Display"', 'serif'],
+            sans: ['"League Spartan"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'pink-glow': '0 10px 40px -10px rgba(255, 145, 209, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Hide Scrollbar for the Slider -->
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Modal Backdrop Blur */
+    dialog::backdrop {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="bg-charm-cream text-slate-700 font-sans antialiased">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-pink-50">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="#" class="flex items-center">
+          <img src="assets/charmcore-logo.png" alt="CharmCore Co. Logo" class="h-32 md:h-40 w-auto">
+        </a>
+      </div>
+
+      <!-- Center: Nav links -->
+      <nav class="hidden md:flex items-center space-x-6 font-heading font-semibold text-slate-600 text-sm lg:text-base">
+        <a href="#offerings" class="hover:text-charm transition whitespace-nowrap">Craft Bars</a>
+        <a href="#gallery" class="hover:text-charm transition whitespace-nowrap">Gallery</a>
+        <a href="#locations" class="hover:text-charm transition whitespace-nowrap">Service Area</a>
+        <a href="#faq" class="hover:text-charm transition whitespace-nowrap">FAQ</a>
+        <a href="#reviews" class="hover:text-charm transition whitespace-nowrap">Reviews</a>
+        <a href="#book" class="hover:text-charm transition whitespace-nowrap">Book</a>
+      </nav>
+
+      <!-- Right side: Book Button & Social Icons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#book" class="bg-charm hover:bg-charm-light text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition shadow-pink-glow whitespace-nowrap">
+          Book Your Party
+        </a>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-3 pl-3 border-l border-pink-100">
+          <!-- Instagram -->
+          <a href="https://instagram.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-charm transition duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://facebook.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-slate-400 hover:text-charm transition duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Width Airy Hero Section -->
+  <section class="w-full bg-cover bg-center bg-no-repeat relative border-b border-pink-50" style="background-image: url('assets/charmcore-hero.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/80 to-charm-blush/90"></div>
+    
+    <div class="relative max-w-4xl mx-auto text-center py-28 md:py-36 px-6">
+      <span class="inline-block bg-white text-charm border border-charm/30 text-sm md:text-base font-bold px-6 py-3 rounded-full mb-6 uppercase tracking-widest shadow-sm">
+        Bespoke Mobile Craft Experiences
+      </span>
+
+      <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-slate-800 tracking-tight mb-4 leading-tight">
+        This party will be a <br>
+        <span class="font-elegant italic font-medium text-charm">core memory.</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        CharmCore Co. brings high-aesthetic, interactive craft bars directly to your home or venue. Guided hands-on creation featuring the trendiest accessories tweens and teens love.
+      </p>
+      
+      <a href="#book" class="inline-block bg-charm hover:bg-charm-light text-white font-heading font-bold text-lg px-10 py-4 rounded-full transition shadow-pink-glow">
+        Book Your Party
+      </a>
+    </div>
+  </section>
+
+  <!-- Party Offerings Section -->
+  <section id="offerings" class="py-20 bg-charm-cream overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 mb-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">Craft Bar Experiences</h2>
+        <p class="text-slate-500 font-light text-lg">Swipe to explore. Click on any service for full details.</p>
+      </div>
+    </div>
+
+    <!-- Swipeable Container -->
+    <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pt-4 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+      
+      <!-- Card 1: Bag Chain Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-bag-chain-bar.jpg" alt="Bag Chain Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Bag Chain Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design personalized, interchangeable charm chains for your favorite purses.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $65/pp</p>
+          <button onclick="document.getElementById('modal-1').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Keychain Bar (TRENDING) -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Trending</span>
+        <img src="assets/charmcore-keychain-bar.jpg" alt="Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Keychain Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Create colorful, one-of-a-kind keychains using assorted charms and beads.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $60/pp</p>
+          <button onclick="document.getElementById('modal-2').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 3: Charm & Bead Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-charm-bead-bar.jpg" alt="Charm & Bead Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Charm & Bead Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Craft custom beaded jewelry with fun charms and unlimited beads.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $60/pp</p>
+          <button onclick="document.getElementById('modal-3').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 4: Classic Charm Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-classic-charm-bar.jpg" alt="Classic Charm Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Classic Charm Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design custom charm necklaces or bracelets with premium curated charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $60/pp</p>
+          <button onclick="document.getElementById('modal-4').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 5: Creamy Creation Decoden Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-creamy-creation-decoden.jpg" alt="Creamy Creation Decoden Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Creamy Creation Decoden</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Decorate frames, cases, or clips with dreamy whipped faux frosting.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $35/pp</p>
+          <button onclick="document.getElementById('modal-5').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 6: Decoden Jewelry Box Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-decoden-jewelry-box.jpg" alt="Decoden Jewelry Box Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Decoden Jewelry Box</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Transform a jewelry box into a sweet fake cake masterpiece.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $35/pp</p>
+          <button onclick="document.getElementById('modal-6').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 7: Glam Brush Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-glam-brush-bar.jpg" alt="Glam Brush Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Glam Brush Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Decorate a premium wooden hairbrush with pearls, shells, and charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $30/pp</p>
+          <button onclick="document.getElementById('modal-7').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 8: Lipgloss Keychain Bar (TRENDING) -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <span class="absolute top-4 right-4 bg-charm text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm z-10">Trending</span>
+        <img src="assets/charmcore-lipgloss-keychain-bar.jpg" alt="Lipgloss Keychain Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Lipgloss Keychain Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design a custom lip gloss keychain with adorable trendy charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $45/pp</p>
+          <button onclick="document.getElementById('modal-8').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 9: Makeup Bag with Keychain -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-makeup-bag-keychain-bar.jpg" alt="Makeup Bag with Keychain" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Makeup Bag w/ Keychain</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Customize a mini makeup bag with patches and beaded keychains.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $45/pp</p>
+          <button onclick="document.getElementById('modal-9').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 10: Phone Wristlet -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-phone-wristlet-bar.jpg" alt="Phone Wristlet" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Phone Wristlet</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Design a custom beaded phone wristlet using colorful trendy charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $30/pp</p>
+          <button onclick="document.getElementById('modal-10').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Card 11: Shoe & Sock Charm Bar -->
+      <div class="w-[85vw] md:w-[320px] shrink-0 snap-center border border-pink-100 rounded-3xl bg-white flex flex-col hover:-translate-y-1 transition duration-300 shadow-sm overflow-hidden relative">
+        <img src="assets/charmcore-shoe-charm-bar.jpg" alt="Shoe & Sock Charm Bar" class="w-full h-48 object-cover bg-slate-100">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-heading font-bold text-slate-800 mb-2">Shoe & Sock Charm Bar</h3>
+          <p class="text-sm text-slate-500 mb-4 font-light leading-relaxed">Customize sneakers or ruffled socks with trendy bows and charms.</p>
+          <p class="text-sm font-semibold text-slate-700 mb-4 mt-auto border-t border-pink-50 pt-4">Starting at $40/pp</p>
+          <button onclick="document.getElementById('modal-11').showModal()" class="text-sm font-bold text-charm hover:text-charm-light text-left transition uppercase tracking-wide">Read Full Description &rarr;</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modals for Full Descriptions -->
+    <!-- Modal 1 -->
+    <dialog id="modal-1" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Bag Chain Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">With lots of personalization and style options, guests can create bag chains for their purses. Created with clips on both sides so that they can easily change it out from bag to bag.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>Includes chain from our chain selections</li>
+          <li>Unlimited beads</li>
+          <li>Charms (up to 5)</li>
+          <li>Bag not included</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. Time 1-1.5 hours</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $65/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 2 -->
+    <dialog id="modal-2" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Keychain Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">The Custom Keychain Bar is a colorful, charm-packed party experience where guests create their own one-of-a-kind keychain or bag chain. Using an assortment of charms, beads, initials, paracord and chain each design becomes a bold expression of their personality and creativity. Perfect for backpacks, purses, or dance bags — this craft doubles as the cutest party favor ever.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>1 keychain or bag clip per guest</li>
+          <li>Assorted charms (5 max), beads, and decorative accents</li>
+          <li>Setup, materials, and guided creative time</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 1.5 hours</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $60/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 3 -->
+    <dialog id="modal-3" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Charm & Bead Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Similar to our classic charm bar but with an addition of beads to allow for more creativity and customization! Guests can create a necklace or bracelets with unlimited beads and add up to 5 charms for a fun, sparkly and fully custom piece!</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>Unlimited beads for a necklace or bracelet</li>
+          <li>5 charms of their choice</li>
+          <li>Creative guidance and instruction</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 1.5 hours</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $60/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 4 -->
+    <dialog id="modal-4" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Classic Charm Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">The Classic Charm Bar — is where creativity meets keepsake. Each guest designs their own custom charm necklace or bracelet, choosing from a curated selection of five charms that reflect their personality and style. From sparkling gems and dainty initials to trendy icons and meaningful symbols, every piece becomes a wearable memory of the day.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>1 necklace or bracelet per guest</li>
+          <li>5 charms of their choice</li>
+          <li>Setup, supplies, and creative instruction</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 1 hour-1.5 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $60/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 5 -->
+    <dialog id="modal-5" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Creamy Creation Decoden Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Get ready for the ultimate sweet aesthetic moment — our Creamy Creations Decoden Workshop is all about over-the-top, pastel-perfect fun! Guests get to choose their own project: a photo frame, phone case, or set of hair clips, then decorate it with a dreamy mix of whipped “frosting,” charms, beads and gems.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>A base item of their choice (frame, phone case, or hair clips)</li>
+          <li>Creamy faux frosting (safe + easy to use)</li>
+          <li>A wide assortment of decoden charms and gems</li>
+          <li>Creative instruction and guidance</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. Time: 1-1.5 hours</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $35/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 6 -->
+    <dialog id="modal-6" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Decoden Jewelry Box Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">In this hands-on workshop, guests will transform a plain jewelry box into a sweet, “fake cake” masterpiece using colorful decoden-style decorations, charms, and embellishments. It’s the perfect way to make a keepsake that’s as unique as you are!</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>Includes 1 jewelry box</li>
+          <li>All decoden charms, gems and accessories</li>
+          <li>Creative guidance and instruction</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est time: 1 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $35/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 7 -->
+    <dialog id="modal-7" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Glam Brush Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Each guest decorates their own wooden hairbrush using a dreamy mix of pearls, shells, gems, and charms, turning an everyday item into a one-of-a-kind keepsake.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>A premium wooden hairbrush</li>
+          <li>A mix of charms, shells, pearls, and gems to match your theme</li>
+          <li>Creative guidance and instruction</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 30 min - 1 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $30/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 8 -->
+    <dialog id="modal-8" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Lipgloss Keychain Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Sweet, shiny, and totally on-trend — the Lip Gloss Keychain Bar is the perfect mix of glam and creativity! Each guest gets to design their own custom lip gloss keychain, complete with a e.l.f.™ lip gloss, adorable charms, and trendy keychain accessories. It’s the ultimate party favor they’ll actually use (and show off).</p>
+        <ul class="text-slate-600 space-y-2 mb-4 font-light list-disc pl-5">
+          <li>1 e.l.f. lip gloss</li>
+          <li>1 keychain clip</li>
+          <li>Assorted charms, beads, and accessories (4 maximum charms)</li>
+          <li>All materials, setup, and creative instruction</li>
+        </ul>
+        <p class="text-slate-600 font-light italic mb-6">Want a different brand or a specific gloss color palette? ✨ Let us know your vision, and we’ll customize your gloss selection with an additional quote to match your theme perfectly.</p>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 1 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $45/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 9 -->
+    <dialog id="modal-9" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Makeup Bag with Keychain</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Each guest gets to design their own mini makeup bag using iron-on letters, patches, pearls, and charms, then finish it off with a personalized name keychain they can clip right on. Perfect for makeup, skincare, or just everyday essentials — it’s a fashion-meets-fun craft experience they’ll love showing off.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>1 makeup bag per guest</li>
+          <li>Assorted iron-on letters, patches, and embellishments</li>
+          <li>1 personalized beaded name keychain</li>
+          <li>All materials, setup, and creative guidance</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. Time 1.5 hours</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $45/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 10 -->
+    <dialog id="modal-10" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Phone Wristlet</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Create the ultimate custom beaded phone wristlet — part charm bar, part functional accessory, and 100% you. Each guest gets to design their own wristlet using a mix of colorful beads, trendy charms, and accent pieces that fit their vibe.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>A phone insert that slides securely into your phone case</li>
+          <li>A mix of beads + charms to create your dream design</li>
+          <li>Step-by-step instructions for easy assembly</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. Time: 30 min - 1 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $30/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+
+    <!-- Modal 11 -->
+    <dialog id="modal-11" class="p-0 rounded-3xl shadow-xl w-11/12 max-w-lg m-auto border border-pink-100 bg-white">
+      <div class="p-8">
+        <h3 class="text-3xl font-heading font-bold text-slate-800 mb-4">Shoe & Sock Charm Bar</h3>
+        <p class="text-slate-600 font-light mb-4 leading-relaxed">Step up your style with our Shoe & Sock Charm Bar! Guests can customize their favorite sneakers or ruffled socks with an adorable assortment of shoelace charms, mini bows, and trendy accents. It's the perfect way to add a personalized, fun touch to their everyday footwear.</p>
+        <ul class="text-slate-600 space-y-2 mb-6 font-light list-disc pl-5">
+          <li>1 pair of ruffled socks or shoelaces per guest</li>
+          <li>Assorted shoe charms and bows (up to 5 max)</li>
+          <li>Setup, materials, and guided creative time</li>
+        </ul>
+        <p class="text-slate-800 font-medium mb-1">Est. time: 1 hour</p>
+        <p class="text-slate-800 font-medium mb-8">Starting at $40/pp</p>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Details</button></form>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-white border-y border-pink-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">The Aesthetic</h2>
+        <p class="text-slate-500 font-light text-lg">A look at recent party setups and finished creations.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-1.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-2.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-28.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-8.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-9.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-10.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-11.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-12.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-15.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-16.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-27.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-20.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-21.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-22.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-24.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-[3/4] bg-charm-blush rounded-t-full rounded-b-2xl overflow-hidden shadow-sm">
+          <img src="assets/Charmcore-gallery-26.jpg" alt="CharmCore Gallery" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations & Travel Fees Section -->
+  <section id="locations" class="py-20 bg-charm-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">Service Locations</h2>
+        <p class="text-slate-500 font-light text-lg">We are a fully mobile experience serving homes and rented event spaces.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Atlanta Location -->
+        <div class="p-6 rounded-3xl bg-white border border-pink-100 shadow-sm flex flex-col text-center">
+          <div class="mb-4 overflow-hidden rounded-2xl aspect-[4/3] bg-pink-50 cursor-pointer group relative" onclick="document.getElementById('modal-map-atlanta').showModal()">
+            <img src="assets/charmcore-atlanta.png" alt="Atlanta Service Radius Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="bg-white/90 text-slate-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Click to Enlarge</span>
+            </div>
+          </div>
+          <h4 class="font-heading font-bold text-2xl text-slate-800 mb-1">Atlanta</h4>
+          <p class="text-sm text-slate-500 font-light mt-auto">(60 mile radius)</p>
+        </div>
+
+        <!-- Chattanooga Location -->
+        <div class="p-6 rounded-3xl bg-white border border-pink-100 shadow-sm flex flex-col text-center">
+          <div class="mb-4 overflow-hidden rounded-2xl aspect-[4/3] bg-pink-50 cursor-pointer group relative" onclick="document.getElementById('modal-map-chattanooga').showModal()">
+            <img src="assets/charmcore-chattanooga.png" alt="Chattanooga Service Radius Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="bg-white/90 text-slate-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Click to Enlarge</span>
+            </div>
+          </div>
+          <h4 class="font-heading font-bold text-2xl text-slate-800 mb-1">Chattanooga</h4>
+          <p class="text-sm text-slate-500 font-light mt-auto">(30 mile radius)</p>
+        </div>
+
+        <!-- Chicago Location -->
+        <div class="p-6 rounded-3xl bg-white border border-pink-100 shadow-sm flex flex-col text-center">
+          <div class="mb-4 overflow-hidden rounded-2xl aspect-[4/3] bg-pink-50 cursor-pointer group relative" onclick="document.getElementById('modal-map-chicago').showModal()">
+            <img src="assets/charmcore-chicago.png" alt="Chicago Service Radius Map" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="bg-white/90 text-slate-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm">Click to Enlarge</span>
+            </div>
+          </div>
+          <h4 class="font-heading font-bold text-2xl text-slate-800 mb-1">Chicago</h4>
+          <p class="text-sm text-slate-500 font-light mt-auto">(30 mile radius)</p>
+        </div>
+      </div>
+      
+      <p class="text-sm text-center text-slate-500 mt-10 font-medium italic">* Distances beyond service radius incur an additional travel fee.</p>
+    </div>
+
+    <!-- Map Modals -->
+    <dialog id="modal-map-atlanta" class="p-0 rounded-3xl shadow-2xl w-11/12 max-w-3xl m-auto border border-pink-100 bg-white">
+      <div class="p-6 md:p-8">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-heading font-bold text-slate-800">Atlanta Service Area (60 Mile Radius)</h3>
+          <form method="dialog"><button class="text-slate-400 hover:text-slate-600 font-bold text-xl px-2">&times;</button></form>
+        </div>
+        <div class="mb-6 rounded-2xl overflow-hidden bg-slate-50 border border-pink-50">
+          <img src="assets/charmcore-atlanta.png" alt="Atlanta Large Service Radius Map" class="w-full h-auto object-contain max-h-[70vh]">
+        </div>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Map</button></form>
+      </div>
+    </dialog>
+
+    <dialog id="modal-map-chattanooga" class="p-0 rounded-3xl shadow-2xl w-11/12 max-w-3xl m-auto border border-pink-100 bg-white">
+      <div class="p-6 md:p-8">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-heading font-bold text-slate-800">Chattanooga Service Area (30 Mile Radius)</h3>
+          <form method="dialog"><button class="text-slate-400 hover:text-slate-600 font-bold text-xl px-2">&times;</button></form>
+        </div>
+        <div class="mb-6 rounded-2xl overflow-hidden bg-slate-50 border border-pink-50">
+          <img src="assets/charmcore-chattanooga.png" alt="Chattanooga Large Service Radius Map" class="w-full h-auto object-contain max-h-[70vh]">
+        </div>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Map</button></form>
+      </div>
+    </dialog>
+
+    <dialog id="modal-map-chicago" class="p-0 rounded-3xl shadow-2xl w-11/12 max-w-3xl m-auto border border-pink-100 bg-white">
+      <div class="p-6 md:p-8">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-heading font-bold text-slate-800">Chicago Service Area (30 Mile Radius)</h3>
+          <form method="dialog"><button class="text-slate-400 hover:text-slate-600 font-bold text-xl px-2">&times;</button></form>
+        </div>
+        <div class="mb-6 rounded-2xl overflow-hidden bg-slate-50 border border-pink-50">
+          <img src="assets/charmcore-chicago.png" alt="Chicago Large Service Radius Map" class="w-full h-auto object-contain max-h-[70vh]">
+        </div>
+        <form method="dialog"><button class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold px-6 py-3 rounded-full transition w-full">Close Map</button></form>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-white border-y border-pink-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-4">The Details</h2>
+        <p class="text-slate-500 font-light text-lg">Everything parents need to know before booking.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            What age group is CharmCore Co. best for?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Our craft bars are specially curated for ages 8 through 16 (tweens and teens), however we can accommodate any age from 2-102! Materials and difficulty levels are adapted based on the specific age of the birthday guest.
+          </p>
+        </details>
+
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            What space or equipment do I need to provide?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            We bring all craft supplies, folding tables and coverings, and tools. We just ask for space to set up and nearby electrical outlets depending on the craft chosen.
+          </p>
+        </details>
+
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            What is your minimum guest headcount?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Our standard packages cover up to 10 guests. Additional guests can be added to any package for an additional fee.
+          </p>
+        </details>
+
+<details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            What is the cost for a party?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Our party packages start at $350 for up to 10 guests. Additional guests can be added to any package for a fee.
+          </p>
+        </details>
+
+<details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            How long does a craft bar experience last?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Our craft bar experiences typically take 45-90 minutes to complete. Pre-party setup time is typically 60-90 minutes.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Slider Section -->
+  <section id="reviews" class="py-20 bg-charm-blush/40 border-b border-pink-50">
+    <div class="max-w-4xl mx-auto px-6 mb-8 text-center">
+      <span class="text-charm font-heading font-bold text-xs uppercase tracking-widest bg-white px-4 py-1.5 rounded-full border border-pink-100 shadow-sm inline-block mb-3">Loved by Parents & Teens</span>
+      <h2 class="text-3xl md:text-4xl font-elegant italic text-slate-800">Core Memories Created</h2>
+      <p class="text-slate-500 font-light text-sm mt-2">Swipe through to see what people are saying about their experience.</p>
+    </div>
+
+    <!-- Swipeable Reviews Container -->
+    <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pt-4 pb-8 px-6 md:px-12 max-w-5xl mx-auto">
+      
+      <!-- Review 1 -->
+      <div class="w-[85vw] md:w-[400px] shrink-0 snap-center bg-white border border-pink-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-charm text-xl mb-4">★★★★★</div>
+          <p class="text-slate-600 font-light italic mb-6 leading-relaxed">"Absolute hit for my daughter's 13th birthday! The setup was stunning, and the host made every single guest feel so special. The bag chain bar was worth every penny."</p>
+        </div>
+        <div class="border-t border-pink-50 pt-4">
+          <p class="font-heading font-bold text-slate-800 text-sm">Jessica M.</p>
+          <p class="text-xs text-slate-400 font-light">Atlanta, GA</p>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="w-[85vw] md:w-[400px] shrink-0 snap-center bg-white border border-pink-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-charm text-xl mb-4">★★★★★</div>
+          <p class="text-slate-600 font-light italic mb-6 leading-relaxed">"The aesthetic was pure perfection. All the teenagers were obsessed with the lip gloss keychain bar, and it doubled as the best party favor they’ve ever gotten!"</p>
+        </div>
+        <div class="border-t border-pink-50 pt-4">
+          <p class="font-heading font-bold text-slate-800 text-sm">Amanda R.</p>
+          <p class="text-xs text-slate-400 font-light">Alpharetta, GA</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="w-[85vw] md:w-[400px] shrink-0 snap-center bg-white border border-pink-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-charm text-xl mb-4">★★★★★</div>
+          <p class="text-slate-600 font-light italic mb-6 leading-relaxed">"So seamless and stress-free for parents. They brought everything, cleaned up afterwards, and the kids had an amazing hands-on experience creating custom phone wristlets."</p>
+        </div>
+        <div class="border-t border-pink-50 pt-4">
+          <p class="font-heading font-bold text-slate-800 text-sm">Chloe T.</p>
+          <p class="text-xs text-slate-400 font-light">Chattanooga, TN</p>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="w-[85vw] md:w-[400px] shrink-0 snap-center bg-white border border-pink-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-charm text-xl mb-4">★★★★★</div>
+          <p class="text-slate-600 font-light italic mb-6 leading-relaxed">"The Decoden fake cake jewelry box bar was out of this world! Such a unique activity that you can't find anywhere else. Will definitely book again!"</p>
+        </div>
+        <div class="border-t border-pink-50 pt-4">
+          <p class="font-heading font-bold text-slate-800 text-sm">Megan K.</p>
+          <p class="text-xs text-slate-400 font-light">Marietta, GA</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HoneyBook Embed / Booking Section -->
+  <section id="book" class="py-24 bg-charm-blush/60 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-charm-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 transform -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-charm-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 transform translate-x-1/2 translate-y-1/2"></div>
+    
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="bg-white/90 backdrop-blur-sm rounded-[2.5rem] p-8 md:p-12 shadow-pink-glow border border-white">
+        <h2 class="text-4xl font-elegant italic text-center text-slate-800 mb-2">Let's Celebrate</h2>
+        <p class="text-sm text-center text-slate-500 mb-10 font-light">Fill out the form below to lock in your date.</p>
+
+        <!-- HoneyBook Form Embed -->
+        <div class="hb-p-68ec44da8a79f10007e3872b-1"></div>
+        <img height="1" width="1" style="display:none" src="https://www.honeybook.com/p.png?pid=68ec44da8a79f10007e3872b">
+        <script>
+          (function(h,b,s,n,i,p,e,t) {
+            h._HB_ = h._HB_ || {};h._HB_.pid = i;;;;
+            t=b.createElement(s);t.type="text/javascript";t.async=!0;t.src=n;
+            e=b.getElementsByTagName(s)[0];e.parentNode.insertBefore(t,e);
+          })(window,document,"script","https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js","68ec44da8a79f10007e3872b");
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Social -->
+  <footer class="bg-white py-12 border-t border-pink-50 text-center">
+    <div class="flex justify-center items-center space-x-6 mb-8">
+      <!-- Instagram -->
+      <a href="https://instagram.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-300 hover:text-charm transition duration-300">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com/charmcoreco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-slate-300 hover:text-charm transition duration-300">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="text-slate-400 text-xs font-light tracking-wide uppercase">© 2026 CharmCore Co. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

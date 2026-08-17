@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+
+<!-- Local Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CharmCore Co.",
+    "image": "https://charmcore.co/assets/CharmCore-logo.png",
+    "@id": "https://charmcore.co/#business",
+    "url": "https://charmcore.co",
+    "telephone": "",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.7490,
+      "longitude": -84.3880
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Atlanta Metro Area"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Chattanooga Area"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Chicagoland Area"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com/charmcoreco",
+      "https://facebook.com/charmcoreco"
+    ]
+  }
+  </script>
+
+<link rel="canonical" href="https://charmcore.co/">
  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G7VE49QCF"></script>
 <script>
@@ -85,7 +130,7 @@
         <a href="#locations" class="hover:text-charm transition whitespace-nowrap">Service Area</a>
         <a href="#faq" class="hover:text-charm transition whitespace-nowrap">FAQ</a>
         <a href="#reviews" class="hover:text-charm transition whitespace-nowrap">Reviews</a>
-        <a href="#book" class="hover:text-charm transition whitespace-nowrap">Book</a>
+        <a href="#book" class="hover:text-charm transition whitespace-nowrap">Request Info</a>
       </nav>
 
       <!-- Right side: Book Button & Social Icons (Desktop) -->
@@ -136,6 +181,7 @@
         <a href="#locations" class="mobile-link hover:text-charm transition">Service Area</a>
         <a href="#faq" class="mobile-link hover:text-charm transition">FAQ</a>
         <a href="#reviews" class="mobile-link hover:text-charm transition">Reviews</a>
+        <a href="#book" class="mobile-link hover:text-charm transition">Request Info</a>
       </nav>
       <div class="pt-2 border-t border-pink-50 flex flex-col space-y-4">
         <a href="#book" class="mobile-link bg-charm text-center hover:bg-charm-light text-white font-heading font-bold text-base px-6 py-3 rounded-full transition shadow-pink-glow">
@@ -203,7 +249,7 @@
     <div class="max-w-6xl mx-auto px-6 mb-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="text-center md:text-left">
-          <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-2">Craft Bar Experiences</h2>
+          <h2 class="text-4xl md:text-5xl font-elegant italic text-slate-800 mb-2">Creative Craft Bar Experiences</h2>
           <p class="text-slate-500 font-light text-lg">Swipe or use arrows to explore. Click any service for full details.</p>
         </div>
         <!-- Scroll Control Buttons -->
@@ -807,56 +853,116 @@
       </div>
 
       <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <!-- FAQ 1 -->
         <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
           <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
             What age group is CharmCore Co. best for?
             <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
           </summary>
-          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-            Our craft bars are specially curated for ages 8 through 16 (tweens and teens), however we can accommodate any age from 2-102! Materials and difficulty levels are adapted based on the specific age of the birthday guest.
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Our creative craft bar experiences are specially curated for ages 8 through 16 (tweens and teens), however we can accommodate any age from 2-102! Materials and difficulty levels are adapted based on the specific event details and requests.
           </p>
         </details>
 
+        <!-- FAQ 2 -->
         <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
           <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
             What space or equipment do I need to provide?
             <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
           </summary>
-          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
             We bring all craft supplies, folding tables and coverings, and tools. We just ask for space to set up and nearby electrical outlets depending on the craft chosen.
           </p>
         </details>
 
+        <!-- FAQ 3 -->
         <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
           <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
-            What is your minimum guest headcount?
+            Do you travel to private homes, parks, or rented event spaces?
             <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
           </summary>
-          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-            Our standard packages cover up to 10 guests. Additional guests can be added to any package for an additional fee.
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Yes! We are a fully mobile experience. We regularly set up inside homes, back patios, community clubhouses, and rented party venues across our service areas.
           </p>
         </details>
 
+        <!-- FAQ 4 -->
         <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
           <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
-            What is the cost for a party?
+            What is your minimum guest headcount and package pricing?
             <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
           </summary>
-          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-            Our party packages start at $350 for up to 10 guests. Additional guests can be added to any package for a fee.
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Our party packages start at $300 for up to 10 guests. Additional guests can easily be added to any package for an incremental fee per person. A 20% deposit is required to reserve your event date.
           </p>
         </details>
 
+        <!-- FAQ 5 -->
         <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
           <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
-            How long does a craft bar experience last?
+            How long does a creative craft bar experience last?
             <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
           </summary>
-          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-            Our craft bar experiences typically take 45-90 minutes to complete. Pre-party setup time is typically 60-90 minutes.
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Our craft bar experiences typically take 45 to 90 minutes of guided creation time, depending on the specific experience chosen. Our team arrives 60 to 90 minutes early for pre-party setup.
           </p>
         </details>
 
+        <!-- FAQ 6 -->
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            Do distances outside your core service radius incur fees?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            We serve defined radiuses around Atlanta (60 miles), Chattanooga (30 miles), and Chicago (30 miles). Events located outside these primary coverage zones incur a standard additional travel fee based on distance.
+          </p>
+        </details>
+
+        <!-- FAQ 7 -->
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            Can you match a specific party theme or color palette?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Yes! We love customizing our setup and materials to match your vision. Whether you have a specific color palette or a favorite aesthetic, just let us know when booking and we can tailor your experience and material selections (charms, glosses, etc.) to fit perfectly.
+          </p>
+        </details>
+
+        <!-- FAQ 8 -->
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            Do you offer customized party packages?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Yes, we can tailor packages to fit your specific guest count, timeline, and celebration style. Reach out through our booking form with your vision, and we will put together a custom package proposal for you.
+          </p>
+        </details>
+
+        <!-- FAQ 9 -->
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            What if I want something I don't see in the services menu?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            We love bringing unique creative ideas to life! If you have a specific craft, theme, or concept in mind that isn't listed on our standard menu, let us know and we can discuss creating a bespoke experience for your event.
+          </p>
+        </details>
+
+        <!-- FAQ 10 -->
+        <details class="bg-charm-blush/50 border border-pink-100 rounded-3xl p-6 cursor-pointer group">
+          <summary class="font-heading font-bold text-lg text-slate-800 flex justify-between items-center outline-none">
+            Do you provide services for corporate and marketing events?
+            <span class="text-charm group-open:rotate-180 transition duration-300">▼</span>
+          </summary>
+          <p class="mt-4 text-lg text-slate-600 font-light leading-relaxed">
+            Yes! Our mobile craft bars make incredible interactive additions to corporate activations, brand pop-ups, influencer events, employee appreciation days, and school functions. Contact us by email at charmcoreco@gmail.com to discuss custom branding options and event logistics.
+          </p>
+        </details>
       </div>
     </div>
   </section>
